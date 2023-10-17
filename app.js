@@ -25,7 +25,12 @@ const server = http.createServer((req,res)=>{
       const parsedBody = querystring.parse(body); // 요청 본문을 파싱
       const { username, password } = parsedBody
 
-      console.log(`form`)
+      console.log(`form 입력으로 부터 받은 데이터 확인 ->`, parsedBody);
+      console.log(`form 입력으로 부터 받은 데이터 확인 ->`, username);
+      console.log(`form 입력으로 부터 받은 데이터 확인 ->`, password);
+
+      res.writeHead(200, {'Content-Type' : 'text/plain'});
+      res.end('login success!!');
     });
   }
 })
